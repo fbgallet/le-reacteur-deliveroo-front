@@ -1,12 +1,12 @@
 import Meal from "./Meal";
 
-const Category = ({ name, meals }) => {
+const Category = ({ name, meals, setCart }) => {
   return (
-    <div className="category-wrapper">
+    <div key={name} className="category-wrapper">
       <h2>{name}</h2>
       <div className="meals-list">
         {meals.map((meal) => (
-          <Meal {...meal} />
+          <Meal key={meal.id} {...meal} setCart={setCart} />
         ))}
       </div>
     </div>

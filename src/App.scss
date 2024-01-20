@@ -1,9 +1,13 @@
 @import "./index.css";
-@import url("./assets/fonts/stylesheet.css");
+@import "./assets/css/fonts.css";
+@import "./assets/css/icons.css";
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+button {
+  border: none;
 }
 
 .content-wrapper {
@@ -69,12 +73,67 @@ p {
 
 main {
   background-color: #f3f5f5;
+  .content-wrapper {
+    // border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.cart-wrapper {
+  flex: 1;
+  .cart {
+    background-color: white;
+    box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+    width: 330px;
+    min-height: 160px;
+    // border: 1px solid red;
+    margin: 20px auto;
+    padding: 5px;
+    > button {
+      width: 300px;
+      height: 50px;
+      padding: 16px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+    .cart-button-enabled {
+      color: white;
+      background-color: green;
+    }
+    .cart-content {
+      padding: 10px;
+      .cart-item {
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        > div:nth-child(2) {
+          flex: 1;
+        }
+      }
+      .sub-total > div,
+      .total {
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .sub-total,
+      .total {
+        margin-top: 10px;
+        border-top: 1px solid grey;
+      }
+      .total {
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .category-wrapper {
   padding: 10px 0 10px 0;
-  flex: 3;
-  max-width: 815px;
+  width: 100%;
+  max-width: 835px;
+  // border: 1px solid blue;
 }
 
 .meals-list {
@@ -82,7 +141,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 15px;
+  gap: 10px;
+  > :hover {
+    box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
+  }
 }
 
 .meal-wrapper {
